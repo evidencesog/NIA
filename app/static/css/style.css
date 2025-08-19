@@ -1,0 +1,300 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0b3d91;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 0.75rem;
+}
+
+/* Container */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  color: #0b3d91;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #555;
+}
+
+/* Login Card */
+.login-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-card h2 {
+  margin-bottom: 1rem;
+  color: #0b3d91;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card label {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.login-card input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-card button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #0b3d91;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-card button:hover {
+  background-color: #092d6e;
+}
+
+/* Extra Links */
+.extra-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.extra-links a {
+  color: #0b3d91;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .login-card {
+    padding: 1.5rem;
+  }
+}
+
+
+
+
+.gov-logo-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gov-logo {
+  max-width: 200px; /* adjusts for desktops */
+  width: 50%;       /* adjusts for smaller screens */
+  height: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .gov-logo {
+    max-width: 150px;
+    width: 70%;
+  }
+}
+
+
+
+/* Header styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa; /* light, official style */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo {
+  max-width: 60px; /* stays small for the top-left corner */
+  height: auto;
+}
+
+/* Hero / main logo section */
+.gov-logo-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gov-logo {
+  max-width: 200px;
+  width: 50%;
+  height: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .header-logo {
+    max-width: 40px; /* smaller on mobile */
+  }
+
+  .gov-logo {
+    max-width: 150px;
+    width: 70%;
+  }
+
+  .navbar {
+    padding: 8px 15px;
+  }
+}
+
+
+
+
+/* Reuse your existing form styles */
+
+.form-container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-container label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.redirect-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.redirect-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.redirect-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+

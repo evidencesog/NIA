@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}Create Account{% endblock %}
+
+{% block content %}
+<header style="display:flex; align-items:center; padding:10px; background:#f8f9fa;">
+  <img src="{{ url_for('static', path='images/gov-logo.png') }}" alt="Gov Logo" style="height:50px; margin-right:10px;">
+  <span style="font-weight:bold; font-size:18px;">NIA Portal</span>
+</header>
+
+<main style="display:flex; justify-content:center; margin-top:30px; margin-bottom:50px;">
+  <div style="width:100%; max-width:600px;">
+
+    <!-- Form Card -->
+    <div style="border:1px solid #ccc; border-radius:12px; padding:25px; box-shadow:0 4px 15px rgba(0,0,0,0.1); background:#fff;">
+
+      <!-- Official Seal & Title -->
+      <div style="text-align:center; margin-bottom:20px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Great_Seal_of_the_United_States_%28obverse%29.svg/1200px-Great_Seal_of_the_United_States_%28obverse%29.svg.png"
+             alt="Official Seal" style="max-width:100px; border-radius:50%; border:2px solid #ccc; padding:5px;">
+        <h3 style="margin-top:10px; font-weight:bold; color:#004085;">National Identification Authority</h3>
+      </div>
+
+      <!-- Step Indicator -->
+      <div id="stepIndicator" style="text-align:center; margin-bottom:20px; font-weight:bold; color:#004085;">
+        Step <span id="currentStepNum">1</span> of 3
+      </div>
+      
+      
+      <!-- Progress Bar -->
+<div style="width:100%; max-width:600px; margin:0 auto 20px auto;">
+  <div style="background:#e9ecef; border-radius:5px; overflow:hidden; height:10px;">
+    <div id="progressBar" style="width:33%; height:100%; background:#004085; transition:width 0.3s;"></div>
+  </div>
+</div>
+
+      <form id="multiStepForm" method="POST" action="/create_account"  enctype="multipart/form-data">
+
+        <!-- Step 1 -->
+        <div class="step" id="step1">
+          <label>First Name</label>
+          <input type="text" name="first_name" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+          
+          <label>Middle Name</label>
+          <input type="text" name="middle_name" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+          
+          <label>Last Name</label>
+          <input type="text" name="last_name" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+          
+          <label>Email</label>
+          <input type="email" name="email" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+          
+          <label>Phone Number</label>
+          <input type="tel" name="phone" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+
+          <div style="display:flex; justify-content:flex-end; margin-top:15px;">
+            <button type="button" onclick="nextStep(1)" style="padding:8px 16px; background:#004085; color:#fff; border:none; border-radius:5px;">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" id="step2" style="display:none;">
+          <label>Date of Birth</label>
+          <input type="date" name="dob" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+          
+          <label>Gender</label>
+          <select name="gender" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          
+          <label>SSN Number</label>
+          <input type="text" name="ssn" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+          
+          <label>Home Address</label>
+          <input type="text" name="home_address" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+
+          <div style="display:flex; justify-content:space-between; margin-top:15px;">
+            <button type="button" onclick="prevStep(2)" style="padding:8px 16px; background:#6c757d; color:#fff; border:none; border-radius:5px;">Previous</button>
+            <button type="button" onclick="nextStep(2)" style="padding:8px 16px; background:#004085; color:#fff; border:none; border-radius:5px;">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" id="step3" style="display:none;">
+          <label>Number of Kids</label>
+          <input type="number" name="kids" min="0" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+          
+          <label>Job</label>
+          <input type="text" name="job" required style="width:100%; padding:8px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+
+          <label>Marital Status</label><br>
+          <input type="radio" name="marital_status" value="single" required> Single
+          <input type="radio" name="marital_status" value="married" required> Married
+          <input type="radio" name="marital_status" value="divorced" required> Divorced
+          <input type="radio" name="marital_status" value="widow" required> Widow
+          <input type="radio" name="marital_status" value="widower" required> Widower
+          <br><br>
+           
+  <div style="margin-top:15px;">
+    <label for="password" style="display:block; margin-bottom:5px; font-weight:600;">Password</label>
+
+
+    <input type="password" id="password" name="password" required
+           style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px; box-sizing:border-box;">
+  </div>
+
+  <!-- Confirm Password -->
+  <div style="margin-top:15px;">
+    <label for="confirm_password" style="display:block; margin-bottom:5px; font-weight:600;">Confirm Password</label>
+    
+    <input type="password" id="confirm_password" name="confirm_password" required
+           style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px; box-sizing:border-box;">
+  </div>
+   
+   <label for="id_card" style="display:block; margin-bottom:5px; font-weight:600;">
+    Upload ID Card
+</label>
+<input type="file" id="id_card" name="id_card" accept="image/*,application/pdf" required
+       style="display:block; margin-bottom:15px; border:1px solid #ccc; padding:8px; border-radius:6px;">
+
+           
+           
+          <div style="display:flex; justify-content:space-between; margin-top:15px;">
+            <button type="button" onclick="prevStep(3)" style="padding:8px 16px; background:#6c757d; color:#fff; border:none; border-radius:5px;">Previous</button>
+            <button type="submit" style="padding:8px 16px; background:#004085; color:#fff; border:none; border-radius:5px;">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+<script>
+let currentStep = 1;
+
+function showStep(step) {
+  document.querySelectorAll('.step').forEach((el, idx) => {
+    el.style.display = (idx+1 === step) ? 'block' : 'none';
+  });
+  document.getElementById('currentStepNum').innerText = step;
+
+  // Update progress bar
+  const totalSteps = document.querySelectorAll('.step').length;
+  const progressPercent = (step / totalSteps) * 100;
+  document.getElementById('progressBar').style.width = progressPercent + '%';
+}
+
+// Validate fields before moving to next step
+function validateStep(step) {
+  const stepDiv = document.getElementById(`step${step}`);
+  const inputs = stepDiv.querySelectorAll('input, select');
+  for (let i = 0; i < inputs.length; i++) {
+    if (!inputs[i].checkValidity()) {
+      inputs[i].reportValidity(); // Highlight first empty field
+      return false;
+    }
+  }
+  return true;
+}
+
+function nextStep(step) {
+  if (validateStep(step)) {
+    currentStep = step + 1;
+    showStep(currentStep);
+  }
+}
+
+function prevStep(step) {
+  currentStep = step - 1;
+  showStep(currentStep);
+}
+
+// Initialize first step
+showStep(currentStep);
+
+
+
+function validateStep3() {
+    const password = document.getElementById("password").value;
+    const confirm = document.getElementById("confirm_password").value;
+    if (!password || !confirm) {
+        alert("Please fill both password fields!");
+        return false;
+    }
+    if (password !== confirm) {
+        alert("Passwords do not match!");
+        return false;
+    }
+    return true;
+}
+
+// Attach to Step 3 Submit button
+document.querySelector("#step3 button[type='submit']").onclick = function(e) {
+    if (!validateStep3()) e.preventDefault();
+}
+
+
+
+
+
+</script>
+
+
+
+{% endblock %}
+
+
+
