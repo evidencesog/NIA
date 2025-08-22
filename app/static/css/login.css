@@ -1,0 +1,56 @@
+/* General body style */
+body {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Login container */
+.login-container {
+    height: 100vh;
+    background: linear-gradient(to right, #004e92, #000428);
+}
+
+/* Card styling */
+.login-card {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+/* Government logo */
+.gov-logo {
+    width: 70px;
+    height: auto;
+}
+
+/* Headings */
+.login-card h3 {
+    font-weight: bold;
+    color: #004e92;
+}
+
+.login-card p {
+    font-size: 0.9rem;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #004e92;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #003366;
+}
+
+/* Small link */
+a.small {
+    color: #004e92;
+    text-decoration: none;
+}
+
+a.small:hover {
+    text-decoration: underline;
+}

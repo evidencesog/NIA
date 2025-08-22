@@ -1,17 +1,26 @@
+<!--- base.html--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Secure NIA Portal{% endblock %}</title>
-  <!-- Correct CSS link -->
+  
+  <!-- Global CSS -->
   <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', path='css/create_account.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/login.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', path='css/account_created.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', path='css/index.css') }}">
+  
+  <!-- Page-specific CSS -->
+  {% block head %}{% endblock %}
 </head>
 <body>
   <header>
     <div class="logo">
-      <!-- Correct image link -->
-      <img src="{{ url_for('static', path='images/idme_logo.png') }}" alt="" height="40">
+     
     </div>
   </header>
 
@@ -19,8 +28,6 @@
     {% block content %}{% endblock %}
   </main>
 
-  <footer>
-    
-  </footer>
+  <footer></footer>
 </body>
 </html>

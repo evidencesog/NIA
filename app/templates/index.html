@@ -1,46 +1,40 @@
 {% extends "base.html" %}
+{% block title %}National Identification Authority (NIA){% endblock %}
 
-{% block title %}GovSecure Portal{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', path='css/index.css') }}">
+{% endblock %}
 
 {% block content %}
-<header class="navbar">
-  <div class="logo">
-    <img src="{{ url_for('static', path='images/gov-logo.png') }}" alt="GovSecure Logo" class="header-logo"/>
-    <span>NIA Portal</span>
-  </div>
-</header>
-
-<main class="container">
-  <section class="hero">
-    <h1>National Identification Authority</h1>
-    <p>Access your services securely and efficiently.</p>
-  </section>
-
-  <!-- Government Logo Section -->
-  <section class="gov-logo-section">
-    <img src="{{ url_for('static', path='images/gov-logo.png') }}" alt="GovSecure Logo" class="gov-logo" />
-  </section>
-
-  <section class="login-card">
-    <h2>Sign In</h2>
-    <form>
-      <label for="email">Email or Username</label>
-      <input type="text" id="email" name="email" required />
-
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required />
-
-      <button type="submit">Login</button>
-    </form>
-
-    <div class="extra-links">
-      <a href="/forget_password">Forgot your password?</a>
-      <a href="/create_account">Create an account</a>
+<div class="landing-hero">
+  <div class="overlay"></div>
+  <div class="hero-content text-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Great_Seal_of_the_United_States_%28obverse%29.svg/600px-Great_Seal_of_the_United_States_%28obverse%29.svg.png" 
+         alt="Great Seal of the United States" class="seal-logo">
+    <h1>National Identification Authority (NIA)</h1>
+    <p class="hero-subtitle">An official identity service of the United States Government</p>
+    <p class="hero-desc">
+      The National Identification Authority securely manages citizen identity records,
+      ensuring access to essential government services and preserving the integrity of identity data.
+    </p>
+    <div class="hero-buttons">
+      <a href="{{ url_for('create_account') }}" class="btn btn-primary btn-lg me-3">Create Account</a>
+      <a href="{{ url_for('login') }}" class="btn btn-light btn-lg">Login</a>
     </div>
-  </section>
-</main>
+  </div>
+</div>
 
-<footer class="footer">
-  <p>&copy; 2025 GovSecure. All Rights Reserved.</p>
+<section class="info-section text-center py-5">
+  <div class="container">
+    <h2>Why Trust NIA?</h2>
+    <p class="lead">
+      NIA provides streamlined, secure, and professional identity management trusted by agencies and citizens nationwide.
+    </p>
+   
+  </div>
+</section>
+
+<footer class="text-center py-3">
+  <small>© 2025 National Identification Authority | An official U.S. Government service</small>
 </footer>
 {% endblock %}

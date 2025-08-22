@@ -1,0 +1,130 @@
+/* General Layout */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f8f9fa;
+}
+.header-logo {
+  height: 50px;
+  margin-right: 10px;
+}
+.header-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 50px 0;
+}
+.main-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Form Card */
+.form-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* Seal */
+.seal-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.seal-img {
+  max-width: 100px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  padding: 5px;
+}
+.seal-title {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #004085;
+}
+
+/* Step Indicator */
+.step-indicator {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #004085;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+.progress-bar-bg {
+  background: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+}
+.progress-bar {
+  width: 33%;
+  height: 100%;
+  background: #004085;
+  transition: width 0.3s;
+}
+
+/* Form Fields */
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.file-input {
+  display: block;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  margin-top: 15px;
+}
+.button-row.right {
+  justify-content: flex-end;
+}
+.button-row.space-between {
+  justify-content: space-between;
+}
+.btn-primary {
+  padding: 8px 16px;
+  background: #004085;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.btn-secondary {
+  padding: 8px 16px;
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Groups */
+.form-group {
+  margin-top: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}

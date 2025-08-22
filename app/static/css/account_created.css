@@ -1,0 +1,33 @@
+.account-created-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.account-created-card {
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+.account-created-card h2 {
+    color: #004085;
+}
+
+.btn-login {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #004085;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-login:hover {
+    background: #003366;
+}

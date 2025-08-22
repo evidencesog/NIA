@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}GovSecure Portal{% endblock %}
+
+{% block content %}
+<header class="navbar">
+  <div class="logo">
+    <img src="{{ url_for('static', path='images/gov-logo.png') }}" alt="GovSecure Logo" class="header-logo"/>
+    <span>NIA Portal</span>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>National Identification Authority</h1>
+    <p>Access your services securely and efficiently.</p>
+  </section>
+
+  <!-- Government Logo Section -->
+  <section class="gov-logo-section">
+    <img src="{{ url_for('static', path='images/gov-logo.png') }}" alt="GovSecure Logo" class="gov-logo" />
+  </section>
+
+  <section class="login-card">
+    <h2>Sign In</h2>
+    <form method="POST" action="/login">
+      <label for="email">Email or Username</label>
+      <input type="text" id="email" name="email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="extra-links">
+      <a href="/forget_password">Forgot your password?</a>
+      <a href="/create_account">Create an account</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 GovSecure. All Rights Reserved.</p>
+</footer>
+{% endblock %}
