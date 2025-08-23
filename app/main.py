@@ -18,6 +18,9 @@ app.include_router(form_routes.router)
 
 #Base Directory
 BASE_DIR = Path(__file__).resolve().parent
+print("BASE_DIR =>", BASE_DIR)
+
+
 
 # Static
 app.mount(
@@ -28,6 +31,7 @@ app.mount(
 
 # Templates
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
+
 
 
 @app.get("/", response_class=HTMLResponse)

@@ -8,13 +8,15 @@ ENV PYTHONUNBUFFERED=1
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies (if needed)
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential curl && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy project files
+# Copy dependency files
 COPY pyproject.toml poetry.lock* /app/
+
+RUN pip install uvicorn
 
 # Install Poetry
 RUN pip install --upgrade pip && pip install poetry
@@ -22,11 +24,12 @@ RUN pip install --upgrade pip && pip install poetry
 # Install dependencies
 RUN poetry install --no-root --no-interaction --no-ansi
 
-# Copy rest of project
-COPY . /app
+# ✅ Copy only the contents of local `app/` into container `/app/`
+COPY app/ /app/
 
 # Expose FastAPI port
 EXPOSE 8000
 
 # Start FastAPI with Uvicorn
-CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
