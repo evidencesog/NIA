@@ -1,25 +1,18 @@
-
-[project]
+[tool.poetry]
 name = "idme"
 version = "0.1.0"
-description = "giverment"
-authors = [
-    {name = "dd"}
-]
-package-mode = false
-license = {text = "dd"}
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "fastapi (>=0.116.1,<0.117.0)",
-    "uvicorn (>=0.35.0,<0.36.0)",
-    "jinja2 (>=3.1.6,<4.0.0)",
-    "python-multipart (>=0.0.20,<0.0.21)"
-]
+description = "FastAPI app deployed on Render"
+authors = ["Evidence SOG <youremail@example.com>"]
+package-mode = false   # 👈 prevents Poetry from trying to install your project as a package
 
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.116.1"
+uvicorn = "^0.35.0"
+jinja2 = "^3.1.6"
+python-multipart = "^0.0.20"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-package-mode = false
