@@ -5,6 +5,7 @@ description = "giverment"
 authors = [
     {name = "dd"}
 ]
+package-mode = false
 license = {text = "dd"}
 readme = "README.md"
 requires-python = ">=3.13"
