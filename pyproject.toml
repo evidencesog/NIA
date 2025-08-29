@@ -5,6 +5,7 @@ description = "government"
 authors = [
     { name = "dd" }
 ]
+packages = [{ include = "idme" }]
 package-mode = false
 license = "MIT"
 readme = "README.md"
